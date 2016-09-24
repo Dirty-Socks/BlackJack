@@ -6,8 +6,8 @@ namespace Homework1
 	public class Suit
 	{
 
-		public static string _name;
-		public static string _symbol;
+		private string _name;
+		private string _symbol;
 
 		public static Suit CLUBS;
 		public static Suit DIAMONDS;
@@ -20,14 +20,19 @@ namespace Homework1
 		{
 			CLUBS = new Suit ("Clubs", "C");
 			DIAMONDS = new Suit ("Diamonds", "D");
-			HEARTS = new Suit ("HEARTS", "H");
+			HEARTS = new Suit ("Hearts", "H");
 			SPADES = new Suit ("Spades", "S");
+
+			VALUES.Add (CLUBS);
+			VALUES.Add (DIAMONDS);
+			VALUES.Add (HEARTS);
+			VALUES.Add (SPADES);
 		}
 
 		public Suit	(string nam, string sym)
 		{
-			_name = nam;
-			_symbol = sym;
+			this._name = nam;
+			this._symbol = sym;
 		}
 
 		public int CompareTo (Suit OtherSuitObject)

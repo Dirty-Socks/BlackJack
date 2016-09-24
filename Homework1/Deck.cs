@@ -24,10 +24,15 @@ namespace Homework1
 			return tempCard;
 		}
 
+		public int GetCardsRemaining ()
+		{
+
+		}
+
 		public static void Main ()
 		{
 			Deck d = new Deck ();
-			Card c = new Card (Suit.CLUBS, Rank.ACE);
+			Card c = new Card (Suit.HEARTS, Rank.KING);
 			d.AddCard (c);
 
 			Card e = d.DealOne ();
