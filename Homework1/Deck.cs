@@ -17,10 +17,21 @@ namespace Homework1
 			dck.Add (c);
 		}
 			
+		public Card DealOne ()
+		{
+			Card tempCard = dck [0];
+			dck.RemoveAt (0);
+			return tempCard;
+		}
 
 		public static void Main ()
 		{
+			Deck d = new Deck ();
+			Card c = new Card (Suit.CLUBS, Rank.ACE);
+			d.AddCard (c);
 
+			Card e = d.DealOne ();
+			Console.WriteLine (e.ToString ());
 		}
 	}
 }
