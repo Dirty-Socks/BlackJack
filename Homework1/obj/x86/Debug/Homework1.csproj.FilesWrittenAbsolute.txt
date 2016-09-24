@@ -1,0 +1,5 @@
+/home/swordfish/School/CSC_496/Homework1/Homework1/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/swordfish/School/CSC_496/Homework1/Homework1/bin/Debug/Homework1.exe.mdb
+/home/swordfish/School/CSC_496/Homework1/Homework1/bin/Debug/Homework1.exe
+/home/swordfish/School/CSC_496/Homework1/Homework1/obj/x86/Debug/Homework1.exe
+/home/swordfish/School/CSC_496/Homework1/Homework1/obj/x86/Debug/Homework1.exe.mdb
