@@ -5,43 +5,53 @@ namespace Homework1
 {
 	public class Deck
 	{
-		private List<Card> dck;
+		private List<Card> deck;
+		private List<Card> rmDeck;
 		private int _fullDeckCount = 0;
 
 		public Deck ()
 		{
-			dck = new List<Card> ();
+			deck = new List<Card> ();
 		}
 
 		public void AddCard(Card c)
 		{
-			dck.Add (c);
+			deck.Add (c);
 			_fullDeckCount++;
 		}
 			
 		public Card DealOne ()
 		{
-			Card tempCard = dck [0];
-			dck.RemoveAt (0);
+			Card tempCard = deck [0];
+			rmDeck.Add (deck [0]);
+			deck.RemoveAt (0);
 			return tempCard;
 		}
 
 		public int GetCardsRemaining ()
 		{
-			return dck.Count;
+			return deck.Count;
 		}
 
 		public int GetDeckSize()
 		{
-			return _fullDeckCount;
+			return (deck.Count+rmDeck.Count);
 		}
 
 		public bool IsEmpty()
 		{
-			if (dck.Count <= 0)
+			if (deck.Count <= 0)
 				return true;
 			else
 				true;
+		}
+
+		public void RestoreDeck()
+		{
+			foreach (Card c in rmDeck) {
+				deck.Add (rmDeck [0]);
+				rmDeck.RemoveAt (0);
+			}
 		}
 
 		public static void Main ()
