@@ -38,16 +38,6 @@ namespace Homework1
 		{
 			return "Rank: " + this.r.ToString() + "\nSuit: " + this.s.ToString();
 		}
-
-		public static void Main ()
-		{
-			//Card c = new Card (Suit.CLUBS, Rank.ACE);
-			//Card c1 = new Card (Suit.CLUBS, Rank.KING);
-
-			//int output = c.CompareTo (c1);
-
-			//Console.WriteLine (c.ToString());
-		}
 	}
 }
 

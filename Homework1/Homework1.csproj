@@ -34,5 +34,6 @@
     <Compile Include="Rank.cs" />
     <Compile Include="Suit.cs" />
     <Compile Include="Card.cs" />
+    <Compile Include="Deck.cs" />
   </ItemGroup>
 </Project>
