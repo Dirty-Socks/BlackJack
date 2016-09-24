@@ -6,6 +6,7 @@ namespace Homework1
 	public class Deck
 	{
 		private List<Card> dck;
+		private int _fullDeckCount = 0;
 
 		public Deck ()
 		{
@@ -15,6 +16,7 @@ namespace Homework1
 		public void AddCard(Card c)
 		{
 			dck.Add (c);
+			_fullDeckCount++;
 		}
 			
 		public Card DealOne ()
@@ -26,7 +28,20 @@ namespace Homework1
 
 		public int GetCardsRemaining ()
 		{
+			return dck.Count;
+		}
 
+		public int GetDeckSize()
+		{
+			return _fullDeckCount;
+		}
+
+		public bool IsEmpty()
+		{
+			if (dck.Count <= 0)
+				return true;
+			else
+				true;
 		}
 
 		public static void Main ()
