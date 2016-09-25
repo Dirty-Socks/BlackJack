@@ -86,6 +86,12 @@ namespace Homework1
 			foreach (Card crd in d.deck) {
 				Console.WriteLine (crd.ToString());
 			}
+
+			d.Shuffle ();
+
+			foreach (Card crd in d.deck) {
+				Console.WriteLine (crd.ToString());
+			}
 		}
 	}
 }
