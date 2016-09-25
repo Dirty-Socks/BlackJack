@@ -66,15 +66,8 @@ namespace Homework1
 
 		public Card RemoveCard (Card c)
 		{
-			foreach (Card crd in this.VALUES) {
-				if (crd.CompareTo (c) == 0) {
-					Card temp = crd; 
-					this.VALUES.Remove (crd);
-					return temp;
-				}
-			}
-			Card deflt = new Card (Suit.SPADES, Rank.ACE);  //should never be returned
-			return deflt;
+			this.VALUES.Remove (c);
+			return c;
 		}
 
 		public Card RemoveCard (int ind)

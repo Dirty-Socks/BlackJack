@@ -7,6 +7,14 @@ namespace Homework1
 		public CardCountGame ()
 		{
 		}
+
+		public void PlayGame()
+		{
+			Deck d = new Deck ();
+
+			Card[] cards = new Card[52];
+
+		}
 	}
 }
 
