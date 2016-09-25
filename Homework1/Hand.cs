@@ -52,6 +52,11 @@ namespace Homework1
 			return VALUES [ind];
 		}
 
+		public int GetNumberOfCards ()
+		{
+			return VALUES.Count;
+		}
+
 		public static void Main()
 		{
 			Hand h = new Hand ();
