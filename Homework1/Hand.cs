@@ -32,6 +32,14 @@ namespace Homework1
 			return false;
 		}
 
+		public void DiscardHand ()
+		{
+			this.hand.RemoveRange (0, this.hand.Count);	
+		}
+
+	//	public int FindCard (Card c)
+
+
 		public static void Main()
 		{
 			Hand h = new Hand ();
@@ -40,13 +48,15 @@ namespace Homework1
 			h.AddCard (c1);
 			h.AddCard (c2);
 
-			Card c3 = new Card (Suit.HEARTS, Rank.KING);
+			foreach (Card crd in h.hand) {
+				Console.WriteLine(crd.ToString ());
+			}
 
-			bool output = h.ContainsCard (c3);
-			if (output)
-				Console.WriteLine ("did contain card");
-			else
-				Console.WriteLine ("did not contain card");
+			h.DiscardHand ();
+
+			foreach (Card crd in h.hand) {
+				Console.WriteLine(crd.ToString ());
+			}
 		}
 	}
 }
