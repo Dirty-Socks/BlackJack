@@ -40,7 +40,7 @@ namespace Homework1
 		public int FindCard (Card c)
 		{
 			for (int i = 0; i < this.VALUES.Count; i++) {
-				if (this.VALUES [i].ToString () == c.ToString ())
+				if (this.VALUES [i].CompareTo(c) == 0)
 					return i;
 			}
 
@@ -90,15 +90,11 @@ namespace Homework1
 				Console.WriteLine(crd.ToString ());
 			}
 
-			Console.WriteLine (h.GetNumberOfCards());
+			//Console.WriteLine (h.GetNumberOfCards());
 
-			h.RemoveCard (c1);
+			int index = h.FindCard (c1);
 
-			foreach (Card crd in h.VALUES) {
-				Console.WriteLine(crd.ToString ());
-			}
-
-			Console.WriteLine (h.GetNumberOfCards());
+			Console.WriteLine (index);
 		}
 	}
 }
