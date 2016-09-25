@@ -85,6 +85,17 @@ namespace Homework1
 			return temp;
 		}
 
+		//public abstract int EvaluateHand ();
+
+		public override string ToString ()
+		{
+			string output = "Hand Contains: \n";
+			foreach (Card crd in this.VALUES) {
+				output += crd.ToString() + "\n";
+			}
+			return output;
+		}
+
 		public static void Main()
 		{
 			Hand h = new Hand ();
@@ -97,11 +108,8 @@ namespace Homework1
 				Console.WriteLine(crd.ToString ());
 			}
 
-			//Console.WriteLine (h.GetNumberOfCards());
+			Console.WriteLine (h.ToString());
 
-			int index = h.FindCard (c1);
-
-			Console.WriteLine (index);
 		}
 	}
 }

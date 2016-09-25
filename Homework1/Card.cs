@@ -36,7 +36,7 @@ namespace Homework1
 
 		public override string ToString ()
 		{
-			return "Rank: " + this.r.ToString() + "\nSuit: " + this.s.ToString();
+			return "Rank: " + this.r.ToString() + ", Suit: " + this.s.ToString();
 		}
 	}
 }
