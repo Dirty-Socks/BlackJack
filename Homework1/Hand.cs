@@ -65,6 +65,19 @@ namespace Homework1
 				return false;
 		}
 
+		public Card RemoveCard (Card c)
+		{
+			foreach (Card crd in this.VALUES) {
+				if (crd.CompareTo (c) == 0) {
+					Card temp = crd; 
+					this.VALUES.Remove (crd);
+					return temp;
+				}
+			}
+			Card deflt = new Card (Suit.SPADES, Rank.ACE);
+			return deflt;
+		}
+
 		public static void Main()
 		{
 			Hand h = new Hand ();
@@ -79,7 +92,7 @@ namespace Homework1
 
 			Console.WriteLine (h.GetNumberOfCards());
 
-			h.DiscardHand ();
+			h.RemoveCard (c1);
 
 			foreach (Card crd in h.VALUES) {
 				Console.WriteLine(crd.ToString ());
