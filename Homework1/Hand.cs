@@ -14,6 +14,10 @@ namespace Homework1
 			hand = new List<Card> ();
 		}
 
+		public void AddCard (Card c)
+		{
+			hand.Add (c);
+		}
 	}
 }
 
