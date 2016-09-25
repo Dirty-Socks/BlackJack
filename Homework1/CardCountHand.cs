@@ -10,7 +10,7 @@ namespace Homework1
 		{
 		}
 
-		public int CompareHand (Hand h)
+		public override int CompareHand (Hand h)
 		{
 			int counter;
 
@@ -29,15 +29,15 @@ namespace Homework1
 					thisInThat.Add (false);
 			}
 
-			foreach (Card crd in h) {
+			foreach (Card crd in h.VALUES) {
 				if (this.ContainsCard (crd)) {
 					thatInThis.Add (true);
 				} else
 					thatInThis.Add (false);
 			}
 
-			bool thisIsInThat = thisInThat.Exists (true);
-			bool thatIsInThis = thatInThis.Exists (true);
+			bool thisIsInThat = thisInThat.Exists (c => c == true);
+			bool thatIsInThis = thatInThis.Exists (c => c == true);
 
 			if (thisIsInThat && thatIsInThis)
 				return 0;
@@ -47,7 +47,20 @@ namespace Homework1
 
 		public static void Main ()
 		{
+			CardCountHand cch = new CardCountHand ();
+			Card c1 = new Card (Suit.CLUBS, Rank.ACE);
+			Card c2 = new Card (Suit.CLUBS, Rank.ACE);
 
+			cch.AddCard (c1);
+			cch.AddCard (c2);
+
+			CardCountHand cch2 = new CardCountHand ();
+			cch2.AddCard (c1);
+			cch2.AddCard (c1);
+
+			int output = cch.CompareHand (cch2);
+
+			Console.WriteLine (output);
 		}
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Homework1
 {
-	abstract class Hand
+	public abstract class Hand
 	{
 
 		public List<Card> VALUES;
