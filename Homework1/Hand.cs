@@ -37,8 +37,15 @@ namespace Homework1
 			this.hand.RemoveRange (0, this.hand.Count);	
 		}
 
-	//	public int FindCard (Card c)
+		public int FindCard (Card c)
+		{
+			for (int i = 0; i < this.hand.Count; i++) {
+				if (this.hand [i].ToString () == c.ToString ())
+					return i;
+			}
 
+			return -1;
+		}
 
 		public static void Main()
 		{
