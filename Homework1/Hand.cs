@@ -6,24 +6,24 @@ namespace Homework1
 	public class Hand
 	{
 
-		public List<Card> hand;  //don't forget to make abstract
+		public List<Card> VALUES;  //don't forget to make abstract
 
  
 		public Hand ()
 		{
-			hand = new List<Card> ();
+			VALUES = new List<Card> ();
 		}
 
 		public void AddCard (Card c)
 		{
-			hand.Add (c);
+			VALUES.Add (c);
 		}
 
 		//public abstract int CompareHand (Hand OtherHandObject);
 
 		public bool ContainsCard (Card c)
 		{
-			foreach (Card crd in this.hand) {
+			foreach (Card crd in this.VALUES) {
 				if (crd.CompareTo (c) == 0) {
 					return true;
 				}
@@ -34,17 +34,22 @@ namespace Homework1
 
 		public void DiscardHand ()
 		{
-			this.hand.RemoveRange (0, this.hand.Count);	
+			this.VALUES.RemoveRange (0, this.VALUES.Count);	
 		}
 
 		public int FindCard (Card c)
 		{
-			for (int i = 0; i < this.hand.Count; i++) {
-				if (this.hand [i].ToString () == c.ToString ())
+			for (int i = 0; i < this.VALUES.Count; i++) {
+				if (this.VALUES [i].ToString () == c.ToString ())
 					return i;
 			}
 
 			return -1;
+		}
+
+		public Card GetCardAtIndex (int ind)
+		{
+			return VALUES [ind];
 		}
 
 		public static void Main()
@@ -55,13 +60,13 @@ namespace Homework1
 			h.AddCard (c1);
 			h.AddCard (c2);
 
-			foreach (Card crd in h.hand) {
+			foreach (Card crd in h.VALUES) {
 				Console.WriteLine(crd.ToString ());
 			}
 
 			h.DiscardHand ();
 
-			foreach (Card crd in h.hand) {
+			foreach (Card crd in h.VALUES) {
 				Console.WriteLine(crd.ToString ());
 			}
 		}
