@@ -3,12 +3,11 @@ using System.Collections.Generic;
 
 namespace Homework1
 {
-	public class Hand
+	abstract class Hand
 	{
 
-		public List<Card> VALUES;  //don't forget to make abstract
+		public List<Card> VALUES;
 
- 
 		public Hand ()
 		{
 			VALUES = new List<Card> ();
@@ -19,7 +18,7 @@ namespace Homework1
 			VALUES.Add (c);
 		}
 
-		//public abstract int CompareHand (Hand OtherHandObject);
+		public abstract int CompareHand (Hand OtherHandObject);
 
 		public bool ContainsCard (Card c)
 		{
@@ -44,7 +43,7 @@ namespace Homework1
 					return i;
 			}
 
-			return -1;
+			return -1;  //couldn't find card
 		}
 
 		public Card GetCardAtIndex (int ind)
@@ -94,22 +93,6 @@ namespace Homework1
 				output += crd.ToString() + "\n";
 			}
 			return output;
-		}
-
-		public static void Main()
-		{
-			Hand h = new Hand ();
-			Card c1 = new Card (Suit.CLUBS, Rank.FIVE);
-			Card c2 = new Card (Suit.DIAMONDS, Rank.ACE);
-			h.AddCard (c1);
-			h.AddCard (c2);
-
-			foreach (Card crd in h.VALUES) {
-				Console.WriteLine(crd.ToString ());
-			}
-
-			Console.WriteLine (h.ToString());
-
 		}
 	}
 }
