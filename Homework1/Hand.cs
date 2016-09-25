@@ -49,12 +49,20 @@ namespace Homework1
 
 		public Card GetCardAtIndex (int ind)
 		{
-			return VALUES [ind];
+			return this.VALUES [ind];
 		}
 
 		public int GetNumberOfCards ()
 		{
-			return VALUES.Count;
+			return this.VALUES.Count;
+		}
+
+		public bool IsEmpty ()
+		{
+			if (this.VALUES.Count <= 0)
+				return true;
+			else
+				return false;
 		}
 
 		public static void Main()
@@ -69,11 +77,15 @@ namespace Homework1
 				Console.WriteLine(crd.ToString ());
 			}
 
+			Console.WriteLine (h.GetNumberOfCards());
+
 			h.DiscardHand ();
 
 			foreach (Card crd in h.VALUES) {
 				Console.WriteLine(crd.ToString ());
 			}
+
+			Console.WriteLine (h.GetNumberOfCards());
 		}
 	}
 }
