@@ -74,8 +74,15 @@ namespace Homework1
 					return temp;
 				}
 			}
-			Card deflt = new Card (Suit.SPADES, Rank.ACE);
+			Card deflt = new Card (Suit.SPADES, Rank.ACE);  //should never be returned
 			return deflt;
+		}
+
+		public Card RemoveCard (int ind)
+		{
+			Card temp = this.VALUES [ind];
+			this.VALUES.RemoveAt (ind);
+			return temp;
 		}
 
 		public static void Main()
