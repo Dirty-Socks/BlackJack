@@ -84,7 +84,7 @@ namespace Homework1
 			return temp;
 		}
 
-		//public abstract int EvaluateHand ();
+		public abstract int EvaluateHand ();
 
 		public override string ToString ()
 		{

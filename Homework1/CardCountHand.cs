@@ -10,7 +10,7 @@ namespace Homework1
 		{
 		}
 
-		public override int CompareHand (Hand h)  //modify this to include evaluate method
+		public override int CompareHand (Hand h)
 		{
 			List<bool> thisInThat = new List<bool> ();
 			List<bool> thatInThis = new List<bool> ();
@@ -29,23 +29,65 @@ namespace Homework1
 					thatInThis.Add (false);
 			}
 
-			/*
-			foreach (bool b in thisInThat) {  //debugging
-				Console.WriteLine (b.ToString ());
-			}
-
-			foreach (bool b in thatInThis) {  //debugging
-				Console.WriteLine (b.ToString ());
-			}
-			*/
-
+			//everything in this hand exists in that hand
 			bool thisIsInThat = !thisInThat.Exists (c => c == false);
+			//everything in that hand exists in that hand
 			bool thatIsInThis = !thatInThis.Exists (c => c == false);
 
 			if (thisIsInThat && thatIsInThis)
 				return 0;
 			else
 				return -1;
+		}
+
+		public override int EvaluateHand ()
+		{
+			int value = 0;
+			foreach (Card crd in this.VALUES) {
+				string sym = crd.GetRank ().GetSymbol ();
+				switch (sym) {
+					case "2":
+						value += 2;
+						break;
+					case "3":
+						value += 3;
+						break;
+					case "4":
+						value += 4;
+						break;
+					case "5":
+						value += 5;
+						break;
+					case "6":
+						value += 6;
+						break;
+					case "7":
+						value += 7;
+						break;
+					case "8":
+						value += 8;
+						break;
+					case "9":
+						value += 9;
+						break;
+					case "10":
+						value += 10;
+						break;
+					case "J":
+						value += 10;
+						break;
+					case "Q":
+						value += 10;
+						break;
+					case "K":
+						value += 10;
+						break;
+					case "A":
+						value += 1;
+						break;
+					}
+			}
+			return value;
 		}
 
 		public static void Main ()
@@ -57,14 +99,10 @@ namespace Homework1
 
 			cch.AddCard (c1);
 			cch.AddCard (c2);
-
-			CardCountHand cch2 = new CardCountHand ();
-			cch2.AddCard (c1);
-			cch2.AddCard (c2);
-			cch2.AddCard (c3);
+			cch.AddCard (c3);
 
 
-			int output = cch.CompareHand (cch2);
+			int output = cch.EvaluateHand ();
 
 			Console.WriteLine (output);
 		}
