@@ -63,36 +63,6 @@ namespace Homework1
 				rmDeck.RemoveAt (0);
 			}
 		}
-
-		public static void Main ()
-		{
-			Deck d = new Deck ();
-			Card c = new Card (Suit.HEARTS, Rank.ACE);
-			Card c1 = new Card (Suit.HEARTS, Rank.KING);
-			Card c2 = new Card (Suit.HEARTS, Rank.QUEEN);
-			Card c3 = new Card (Suit.HEARTS, Rank.JACK);
-			Card c4 = new Card (Suit.HEARTS, Rank.TEN);
-			Card c5 = new Card (Suit.HEARTS, Rank.NINE);
-			Card c6 = new Card (Suit.HEARTS, Rank.EIGHT);
-
-			d.AddCard (c);
-			d.AddCard (c1);
-			d.AddCard (c2);
-			d.AddCard (c3);
-			d.AddCard (c4);
-			d.AddCard (c5);
-			d.AddCard (c6);
-
-			foreach (Card crd in d.deck) {
-				Console.WriteLine (crd.ToString());
-			}
-
-			d.Shuffle ();
-
-			foreach (Card crd in d.deck) {
-				Console.WriteLine (crd.ToString());
-			}
-		}
 	}
 }
 
