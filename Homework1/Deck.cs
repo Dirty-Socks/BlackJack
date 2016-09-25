@@ -7,7 +7,6 @@ namespace Homework1
 	{
 		private List<Card> deck;
 		private List<Card> rmDeck;
-		private int _fullDeckCount = 0;
 
 		public Deck ()
 		{
@@ -17,7 +16,6 @@ namespace Homework1
 		public void AddCard(Card c)
 		{
 			deck.Add (c);
-			_fullDeckCount++;
 		}
 			
 		public Card DealOne ()
@@ -43,7 +41,19 @@ namespace Homework1
 			if (deck.Count <= 0)
 				return true;
 			else
-				true;
+				return true;
+		}
+
+		public void Shuffle()
+		{
+			Random rnd = new Random ();
+			for (int i = 0; i < deck.Count; i++) {
+				Card temp = deck[i];
+				int randomIndex = rnd.Next(i, deck.Count);
+				deck[i] = deck[randomIndex];
+				deck[randomIndex] = temp;
+			}
+
 		}
 
 		public void RestoreDeck()
@@ -57,11 +67,25 @@ namespace Homework1
 		public static void Main ()
 		{
 			Deck d = new Deck ();
-			Card c = new Card (Suit.HEARTS, Rank.KING);
-			d.AddCard (c);
+			Card c = new Card (Suit.HEARTS, Rank.ACE);
+			Card c1 = new Card (Suit.HEARTS, Rank.KING);
+			Card c2 = new Card (Suit.HEARTS, Rank.QUEEN);
+			Card c3 = new Card (Suit.HEARTS, Rank.JACK);
+			Card c4 = new Card (Suit.HEARTS, Rank.TEN);
+			Card c5 = new Card (Suit.HEARTS, Rank.NINE);
+			Card c6 = new Card (Suit.HEARTS, Rank.EIGHT);
 
-			Card e = d.DealOne ();
-			Console.WriteLine (e.ToString ());
+			d.AddCard (c);
+			d.AddCard (c1);
+			d.AddCard (c2);
+			d.AddCard (c3);
+			d.AddCard (c4);
+			d.AddCard (c5);
+			d.AddCard (c6);
+
+			foreach (Card crd in d.deck) {
+				Console.WriteLine (crd.ToString());
+			}
 		}
 	}
 }
