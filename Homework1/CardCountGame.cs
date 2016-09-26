@@ -126,8 +126,6 @@ namespace Homework1
 			CardCountHand cch1 = new CardCountHand ();
 			CardCountHand cch2 = new CardCountHand ();
 
-
-
 			for (int i = 0; i < 8; i++) {
 				cch1.VALUES.Add (d.DealOne ());
 				cch2.VALUES.Add (d.DealOne ());
@@ -141,9 +139,6 @@ namespace Homework1
 			Console.WriteLine("Evaluates to: "+cch2.EvaluateHand());
 
 			Console.WriteLine ("\nCards left in Deck: "+d.GetCardsRemaining ());
-				
-
-
 		}
 	}
 }

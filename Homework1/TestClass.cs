@@ -7,6 +7,12 @@ namespace Homework1
 		public TestClass ()
 		{
 		}
+
+		public static void Main ()
+		{
+			CardCountGame ccg = new CardCountGame ();
+			ccg.PlayGame ();
+		}
 	}
 }
 
