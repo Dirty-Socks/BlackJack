@@ -124,18 +124,26 @@ namespace Homework1
 			d.Shuffle ();
 
 			CardCountHand cch1 = new CardCountHand ();
-			//CardCountHand cch2 = new CardCountHand ();
+			CardCountHand cch2 = new CardCountHand ();
 
 
 
 			for (int i = 0; i < 8; i++) {
 				cch1.VALUES.Add (d.DealOne ());
-				//cch2 [i] = d.DealOne ();
+				cch2.VALUES.Add (d.DealOne ());
 			}
 
 			foreach (Card crd in cch1.VALUES) {
 				Console.WriteLine (crd.ToString());
 			}
+
+			Console.WriteLine ("\n");
+
+			foreach (Card crd in cch2.VALUES) {
+				Console.WriteLine (crd.ToString ());
+			}
+
+			Console.WriteLine (d.GetCardsRemaining ());
 				
 
 
