@@ -8,11 +8,13 @@ namespace Homework1
 		{
 		}
 
-		public static void Main ()
+		/*public static void Main ()
 		{
 			CardCountGame ccg = new CardCountGame ();
-			ccg.PlayGame ();
-		}
+			//ccg.PlayGame ();
+
+
+		}*/
 	}
 }
 
