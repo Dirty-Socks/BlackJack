@@ -8,7 +8,7 @@ namespace Homework1
 		{
 		}
 
-		public void PlayGame()
+		public static void Main ()
 		{
 			Deck d = new Deck ();
 
@@ -121,11 +121,22 @@ namespace Homework1
 			d.AddCard (c51);
 			d.AddCard (c52);
 
+			d.Shuffle ();
+
+			CardCountHand cch1 = new CardCountHand ();
+			//CardCountHand cch2 = new CardCountHand ();
 
 
 
+			for (int i = 0; i < 8; i++) {
+				cch1.VALUES.Add (d.DealOne ());
+				//cch2 [i] = d.DealOne ();
+			}
 
-
+			foreach (Card crd in cch1.VALUES) {
+				Console.WriteLine (crd.ToString());
+			}
+				
 
 
 		}
