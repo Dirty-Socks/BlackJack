@@ -8,7 +8,7 @@ namespace Homework1
 		{
 		}
 
-		public static void Main ()
+		public void PlayGame ()
 		{
 			Deck d = new Deck ();
 
@@ -132,18 +132,15 @@ namespace Homework1
 				cch1.VALUES.Add (d.DealOne ());
 				cch2.VALUES.Add (d.DealOne ());
 			}
-
-			foreach (Card crd in cch1.VALUES) {
-				Console.WriteLine (crd.ToString());
-			}
-
+				
+			Console.WriteLine (cch1.ToString());
+			Console.WriteLine("Evaluates to: "+cch1.EvaluateHand());
 			Console.WriteLine ("\n");
 
-			foreach (Card crd in cch2.VALUES) {
-				Console.WriteLine (crd.ToString ());
-			}
+			Console.WriteLine (cch2.ToString ());
+			Console.WriteLine("Evaluates to: "+cch2.EvaluateHand());
 
-			Console.WriteLine (d.GetCardsRemaining ());
+			Console.WriteLine ("\nCards left in Deck: "+d.GetCardsRemaining ());
 				
 
 

@@ -39,5 +39,6 @@
     <Compile Include="CardCountHand.cs" />
     <Compile Include="BlackJackHand.cs" />
     <Compile Include="CardCountGame.cs" />
+    <Compile Include="TestClass.cs" />
   </ItemGroup>
 </Project>
