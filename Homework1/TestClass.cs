@@ -55,7 +55,7 @@ namespace Homework1
 			BlackJackGame bjg = new BlackJackGame ();
 
 			Console.WriteLine ("Play Blackjack Game: \n");
-			//bjg.PlayGame ();
+			bjg.PlayGame ();
 		}
 	}
 }
