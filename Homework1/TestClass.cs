@@ -49,7 +49,7 @@ namespace Homework1
 
 			CardCountGame ccg = new CardCountGame ();
 
-			Console.WriteLine ("Play Card Count Game: \n");
+			Console.WriteLine ("\nPlay Card Count Game: \n");
 			ccg.PlayGame ();
 
 			BlackJackGame bjg = new BlackJackGame ();

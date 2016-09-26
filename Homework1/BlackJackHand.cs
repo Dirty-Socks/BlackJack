@@ -9,36 +9,6 @@ namespace Homework1
 		{
 		}
 
-		/*public override int CompareHand (Hand h)
-		{
-			List<bool> thisInThat = new List<bool> ();
-			List<bool> thatInThis = new List<bool> ();
-
-			foreach (Card crd in this.VALUES) {  
-				if (h.ContainsCard (crd)) {
-					thisInThat.Add (true);
-				} else
-					thisInThat.Add (false);
-			}
-
-			foreach (Card crd in h.VALUES) {  
-				if (this.ContainsCard (crd)) {
-					thatInThis.Add (true);
-				} else
-					thatInThis.Add (false);
-			}
-
-			//everything in this hand exists in that hand
-			bool thisIsInThat = !thisInThat.Exists (c => c == false);
-			//everything in that hand exists in that hand
-			bool thatIsInThis = !thatInThis.Exists (c => c == false);
-
-			if (thisIsInThat && thatIsInThis)
-				return 0;
-			else
-				return -1;
-		}*/
-
 		public override int CompareHand (Hand h)
 		{
 			if (this.EvaluateHand () == h.EvaluateHand ())
