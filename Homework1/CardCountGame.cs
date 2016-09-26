@@ -138,7 +138,7 @@ namespace Homework1
 			Console.WriteLine ("Hand Contains: "+cch2.ToString ());
 			Console.WriteLine("Evaluates to: "+cch2.EvaluateHand());
 
-			Console.WriteLine ("\nCards left in Deck: "+d.GetCardsRemaining ());
+			Console.WriteLine ("\nCards left in Deck: "+d.GetCardsRemaining ()+"\n");
 		}
 	}
 }
