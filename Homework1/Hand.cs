@@ -81,7 +81,7 @@ namespace Homework1
 
 		public override string ToString ()
 		{
-			string output = "Hand Contains: \n";
+			string output = "";
 			foreach (Card crd in this.VALUES) {
 				output += crd.ToString() + "\n";
 			}

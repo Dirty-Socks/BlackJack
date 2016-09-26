@@ -131,11 +131,11 @@ namespace Homework1
 				cch2.VALUES.Add (d.DealOne ());
 			}
 				
-			Console.WriteLine (cch1.ToString());
+			Console.WriteLine ("Hand Contains: "+cch1.ToString());
 			Console.WriteLine("Evaluates to: "+cch1.EvaluateHand());
 			Console.WriteLine ("\n");
 
-			Console.WriteLine (cch2.ToString ());
+			Console.WriteLine ("Hand Contains: "+cch2.ToString ());
 			Console.WriteLine("Evaluates to: "+cch2.EvaluateHand());
 
 			Console.WriteLine ("\nCards left in Deck: "+d.GetCardsRemaining ());

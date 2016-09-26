@@ -132,10 +132,54 @@ namespace Homework1
 
 			mainDeck.Shuffle ();
 
-			bool gameInPlay = true;
-			while (gameInPlay) {
+			BlackJackHand bjh1 = new BlackJackHand ();
+			BlackJackHand bjh2 = new BlackJackHand ();
 
+			bool gameInPlay = true;
+			bool usersTurn = true;
+			bool dealersTurn = true;
+
+			int userScore;
+			int dealerScore;
+
+			//string message = "Your hand is: \n";
+			while (gameInPlay) {
+				//User's turn
+				while (usersTurn) {
+					bjh1.AddCard (mainDeck.DealOne ());
+					userScore = bjh1.EvaluateHand ();
+					Console.WriteLine ("Your hand is: \n"+bjh1.ToString());
+					Console.WriteLine ("Your score is: "+userScore);
+					
+					if (bjh1.EvaluateHand () > 21) {
+						Console.WriteLine ("You lost, you loser.");
+						usersTurn = false;
+						break;
+					}
+
+					Console.WriteLine ("Hit or Stand? (h/s)");
+					string line = Console.ReadLine ();
+					if (line == "s" || line == "S") {
+						usersTurn = false;
+						break;
+					}
+				}
+
+				//Dealer's turn
+				while (dealersTurn) {
+					bjh2.AddCard (mainDeck.DealOne ());
+					dealerScore = bjh2.EvaluateHand ();
+					Console.WriteLine ("Dealer's hand is: \n" + bjh2.ToString ());
+					Console.WriteLine ("Dealer's score is: " + dealerScore);
+
+					if (dealerScore >= 17) {
+						dealersTurn = false;
+						gameInPlay = false;
+					}
+				}
 			}
+
+
 		}
 	}
 }
