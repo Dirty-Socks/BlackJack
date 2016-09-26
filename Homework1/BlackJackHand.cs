@@ -9,7 +9,7 @@ namespace Homework1
 		{
 		}
 
-		public override int CompareHand (Hand h)
+		/*public override int CompareHand (Hand h)
 		{
 			List<bool> thisInThat = new List<bool> ();
 			List<bool> thatInThis = new List<bool> ();
@@ -37,6 +37,16 @@ namespace Homework1
 				return 0;
 			else
 				return -1;
+		}*/
+
+		public override int CompareHand (Hand h)
+		{
+			if (this.EvaluateHand () == h.EvaluateHand ())
+				return 0;
+			else if (this.EvaluateHand () < h.EvaluateHand ())
+				return -1;
+			else
+				return 1;
 		}
 
 		public override int EvaluateHand ()

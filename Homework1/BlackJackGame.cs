@@ -9,7 +9,7 @@ namespace Homework1
 		{
 		}
 
-		public static void Main ()
+		public void PlayGame ()
 		{
 			List<Card> d = new List<Card> ();
 
@@ -142,18 +142,22 @@ namespace Homework1
 			int userScore;
 			int dealerScore;
 
+			bool userLost = false;
+
 			//string message = "Your hand is: \n";
 			while (gameInPlay) {
 				//User's turn
+				Console.WriteLine ("xxxxxxxxxxxxxxxx Your Turn xxxxxxxxxxxxxxxxxxxx");
 				while (usersTurn) {
 					bjh1.AddCard (mainDeck.DealOne ());
 					userScore = bjh1.EvaluateHand ();
 					Console.WriteLine ("Your hand is: \n"+bjh1.ToString());
-					Console.WriteLine ("Your score is: "+userScore);
+					Console.WriteLine ("Your score is: \n"+userScore+"\n");
 					
 					if (bjh1.EvaluateHand () > 21) {
-						Console.WriteLine ("You lost, you loser.");
+						//Console.WriteLine ("You lost, you loser.");
 						usersTurn = false;
+						userLost = true;
 						break;
 					}
 
@@ -165,12 +169,13 @@ namespace Homework1
 					}
 				}
 
+				Console.WriteLine ("xxxxxxxxxxxxxxxx Dealers Turn xxxxxxxxxxxxxxxxxxxx");
 				//Dealer's turn
 				while (dealersTurn) {
 					bjh2.AddCard (mainDeck.DealOne ());
 					dealerScore = bjh2.EvaluateHand ();
 					Console.WriteLine ("Dealer's hand is: \n" + bjh2.ToString ());
-					Console.WriteLine ("Dealer's score is: " + dealerScore);
+					Console.WriteLine ("Dealer's score is: \n" + dealerScore+"\n");
 
 					if (dealerScore >= 17) {
 						dealersTurn = false;
@@ -179,6 +184,16 @@ namespace Homework1
 				}
 			}
 
+			if (bjh1.CompareHand (bjh2) == 1 && !userLost)
+				Console.WriteLine ("You won I think!");
+			else if (bjh1.CompareHand(bjh2) == -1 && !userLost)
+				Console.WriteLine ("You won I think!");
+			else if (bjh1.CompareHand (bjh2) == 0)
+				Console.WriteLine ("You tied?");
+			else if (userLost)
+				Console.WriteLine ("You lost I think");
+			else if (bjh1.CompareHand(bjh2) == -1 && userLost)
+				Console.WriteLine ("You lost I think");
 
 		}
 	}
